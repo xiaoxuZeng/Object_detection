@@ -105,4 +105,4 @@ In python3 range is a generator object - it does not return a list. Convert it t
 ## 五、参考资料
 1. [tensorflow 轻松实现自己的目标检测](https://blog.csdn.net/wangjian1204/article/details/79124018)
 2. [Tensorflow Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection)
-3. [Object detection with TensorFlow - O'Reilly Media(https://www.oreilly.com/ideas/object-detection-with-tensorflow)
+3. [Object detection with TensorFlow - O'Reilly Media](https://www.oreilly.com/ideas/object-detection-with-tensorflow)
