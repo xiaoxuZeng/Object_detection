@@ -23,7 +23,7 @@ Speed (ms) | COCO mAP[^1]
 3. 相关数据在Github文件中
 ### 相关类含义：
 
-class| mean 
+class| meaning 
 ---|---
 class1 | 轧制重皮
 class2 | 重皮
