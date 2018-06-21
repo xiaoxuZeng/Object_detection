@@ -1,11 +1,10 @@
-# Object_detection
 ## 一、[编译proto文件](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/installation.md)
 ```
 # From tensorflow/models/research/
 1. protoc object_detection/protos/*.proto --python_out=.
 2. export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
 # test
-3.python3 object_detection/builders/model_builder_test.py
+3. python3 object_detection/builders/model_builder_test.py
 ```
 ## 二、[训练新的模型](https://github.com/hzy46/Deep-Learning-21-Examples/blob/master/chapter_5/README.md)
 ```
@@ -20,11 +19,11 @@
 6. 修改voc.config
 7. python3 train.py --train_dir voc/train_dir/ --pipeline_config_path voc/voc.config
 8. tensorboard --logdir voc/train_dir/
-9. python3 export_inference_graph.py \
-  --input_type image_tensor \
-  --pipeline_config_path voc/voc.config \
-  --trained_checkpoint_prefix voc/train_dir/model.ckpt-1582
-  --output_directory voc/export/
+9. python3 export_inference_graph.py \ 
+--input_type image_tensor \ 
+--pipeline_config_path voc/voc.config \
+--trained_checkpoint_prefix voc/train_dir/model.ckpt-7622
+--output_directory voc/export/
 ```
 ## 三、遇到的坑
 1. ValueError: Tried to convert 't' to a tensor and failed. Error: Argument must be a dense tensor: range(0, 3) - got shape [3], but wanted [].
@@ -94,6 +93,10 @@ to the new slightly different:
 ```
 1. sudo apt-get install python3-tk 
 2. sudo apt-get install -f 
+```
+4. TypeError: 'range' object does not support item assignment
+```
+In python3 range is a generator object - it does not return a list. Convert it to a list before shuffling.
 ```
 ## 四、检测结果
 ![image](http://m.qpic.cn/psb?/V13EpJbL3HbDX9/jsu8LOoB6UK628tijd02h3aO5kvAa45rfZwzOwzNPGE!/b/dFcAAAAAAAAA&bo=9AHVAQAAAAADBwM!&rf=viewer_4)
