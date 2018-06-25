@@ -1,4 +1,5 @@
 > Liu, Wei; Anguelov, Dragomir; Erhan, Dumitru; Szegedy, Christian; Reed, Scott; Fu, Cheng-Yang; Berg,Alexander C.SSD: Single Shot MultiBox Detector.eprint arXiv:1512.02325.12/2015
+
 ![image](http://m.qpic.cn/psb?/V12DPMma00AtxB/0ukGHA8nEqrCBCSg.SxWW2qp9sTufJfkKuYOoou1Xek!/b/dDMBAAAAAAAA&bo=9AMkAfQDJAEDByI!&rf=viewer_4)
 
 SSD的base network基于VGG-16（分类层之前的所以部分）。其创新之处在于增加了如下结构：
