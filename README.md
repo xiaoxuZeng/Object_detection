@@ -22,7 +22,7 @@
 9. python3 export_inference_graph.py \ 
 --input_type image_tensor \ 
 --pipeline_config_path voc/voc.config \
---trained_checkpoint_prefix voc/train_dir/model.ckpt-7622
+--trained_checkpoint_prefix voc/train_dir/model.ckpt-7622 \
 --output_directory voc/export/
 ```
 ## 三、遇到的坑
