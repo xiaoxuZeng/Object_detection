@@ -2,14 +2,14 @@
 > 更新20180705
 
 现在采用了更加先进的ssd_inception_v2_coco模型
-### 相关参数：
+### 一、相关参数：
 
 Speed (ms) | COCO mAP[^1]
 ---|---
 42 | 24
 
 虽然从参数上看，ssd_inception_v2_coco的mAP低于faster_rcnn_inception_resnet_v2_atrous_coco_11_06_2017，但实际效果上，前者更优。新模型不但在检测速度上优于老模型，而且泛化能力更强。
-### 效果
+### 二、效果
 ![image](http://a2.qpic.cn/psb?/V13EpJbL3HbDX9/*eOIPKVo4dboashr45RZ3RU2v4VNVZscFQQbCzk27wc!/b/dDEBAAAAAAAA&ek=1&kp=1&pt=0&bo=AgLVAQIC1QEDFzI!&tl=1&vuin=673535308&tm=1530842400&sce=60-4-3&rf=viewer_4)
 ![image](http://a3.qpic.cn/psb?/V13EpJbL3HbDX9/N.BY8lwsnFA1Tq*UTdIIiD0vUJkPGoNZmkwuHsC048g!/b/dC4BAAAAAAAA&ek=1&kp=1&pt=0&bo=EwLVARMC1QEDFzI!&tl=1&vuin=673535308&tm=1530842400&sce=60-4-3&rf=viewer_4)
 ![image](http://a4.qpic.cn/psb?/V13EpJbL3HbDX9/2cNtYugvpqogVLReHFytH.5ySmo5mdj6IHJ8rHu7gAk!/b/dDMBAAAAAAAA&ek=1&kp=1&pt=0&bo=AALVAQAC1QEDFzI!&tl=1&vuin=673535308&tm=1530842400&sce=60-4-3&rf=viewer_4)
@@ -20,8 +20,8 @@ Speed (ms) | COCO mAP[^1]
 ![image](http://m.qpic.cn/psb?/V13EpJbL3HbDX9/YhoEyFQOakDdRMOw.VA1JJBURrX3ayTeg08uCyRDGV8!/b/dDEBAAAAAAAA&bo=BQHWAQUB1gEDFzI!&rf=viewer_4)
 ![image](http://m.qpic.cn/psb?/V13EpJbL3HbDX9/V6Ml2*oZxg6c2sWSqYx.boXIkvzY*vuvfC5DmGPRzoY!/b/dDEBAAAAAAAA&bo=yQJaAckCWgEDFzI!&rf=viewer_4)
 ![image](http://m.qpic.cn/psb?/V13EpJbL3HbDX9/QVBVvoMjjzfU4UGCF2wEcOFc8YJhYmBf5BlUpPIoExU!/b/dFcAAAAAAAAA&bo=yQJuAckCbgEDFzI!&rf=viewer_4)
-### 分析
-可以看出，对于V1中识别效果不佳的轧制条痕原料、成品划伤、稳定辊划伤、凹印这几内疵点，V2模型表现出了良好的效果。
+### 三、分析
+可以看出，对于V1中识别效果不佳的轧制条痕原料、成品划伤、稳定辊划伤、凹印这几类疵点，V2模型表现出了良好的效果。
 除此以外，V1中能识别的疵点，V2有相同，甚至更好的表现。
 ![image](http://m.qpic.cn/psb?/V13EpJbL3HbDX9/cGFj4dwRE4B0mWO3PFM.dKHzDISfQ6qeBHjE*der0Vs!/b/dEUBAAAAAAAA&bo=twHVAbcB1QEDFzI!&rf=viewer_4)
 
