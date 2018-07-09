@@ -27,7 +27,7 @@ flags.DEFINE_boolean('ignore_difficult_instances', False, 'Whether to ignore '
 FLAGS = flags.FLAGS
 
 SETS = ['train', 'val', 'trainval', 'test']
-YEARS = ['VOC2007', 'VOC2012', 'merged']
+
 
 
 def dict_to_tf_example(data,
@@ -95,7 +95,7 @@ def dict_to_tf_example(data,
       classes_text.append(obj['name'].encode('utf8'))
       classes.append(int(obj['name'].encode('utf8'))) #labelmap
       truncated.append(0)#truncated=0
-      poses.append(b'Frontal')
+      poses.append(b'Unspecified')
 
   example = tf.train.Example(features=tf.train.Features(feature={
       'image/height': dataset_util.int64_feature(height),
