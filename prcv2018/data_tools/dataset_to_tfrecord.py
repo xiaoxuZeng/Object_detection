@@ -115,7 +115,7 @@ def dict_to_tf_example(data,
       xmax.append(float(xmax_) / width)
       ymax.append(float(ymax_) / height)
       classes_text.append(obj['name'].encode('utf8'))
-      classes.append(int(obj['name'].encode('utf8'))) #labelmap
+      classes.append(label_map_dict[obj['name']]) #labelmap
       truncated.append(0)#truncated=0
       poses.append(b'Unspecified')
 
@@ -146,8 +146,7 @@ def main(_):
     raise ValueError('set must be in : {}'.format(SETS))
   writer = tf.python_io.TFRecordWriter(FLAGS.output_path)
   data_dir = FLAGS.data_dir
-
-  label_map_dict = label_map_util.get_label_map_dict(FLAGS.label_map_path)
+  label_map_dict = label_map_util.get_label_map_dict('/home/zju/models/research/object_detection/Det_datasets/pascal_label_map.pbtxt')
   txt_path = os.path.join('Det_datasets', 'train_list' + '.txt')
   examples_list = read_examples_list(txt_path)
   for idx, example in enumerate(examples_list):
