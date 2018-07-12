@@ -86,7 +86,7 @@ to the new slightly different:
 ```
 2. [错误：tensorflow.python.framework.errors_impl.InternalError: Dst tensor is not initialized.](http://blog.sina.com.cn/s/blog_92d2c5e10102xhxj.html)
 分析：出现这个错误一般是GPU内存耗尽。
-解决办法：运行程序之前，先运行export CUDA_VISIBLE_DEVICES=1
+解决办法：运行程序之前，先运行export CUDA_VISIBLE_DEVICES=0
 
 3. ImportError: No module named '_tkinter', please install the python3-tk package
 [解决方法](https://blog.csdn.net/qq_18293213/article/details/74483516)：
