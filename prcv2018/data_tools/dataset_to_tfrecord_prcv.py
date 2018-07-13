@@ -116,8 +116,8 @@ def dict_to_tf_example(data,
 
       xmin.append(float(obj['bounding_box']['x_left_top']) / width)
       ymin.append(float(obj['bounding_box']['y_left_top']) / height)
-      xmax_ = obj['bounding_box']['x_left_top']+obj['bounding_box']['width']
-      ymax_ = obj['bounding_box']['y_left_top']+obj['bounding_box']['height']
+      xmax_ = float(obj['bounding_box']['x_left_top'])+float(obj['bounding_box']['width'])
+      ymax_ = float(obj['bounding_box']['y_left_top'])+float(obj['bounding_box']['height'])
       xmax.append(float(xmax_) / width)
       ymax.append(float(ymax_) / height)
       classes_text.append(obj['name'].encode('utf8'))
