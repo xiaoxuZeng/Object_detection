@@ -63,6 +63,7 @@
     <img src="http://m.qpic.cn/psb?/V13EpJbL1fHfxN/KhJTEVGPqPrE.6cf8JXcyJr.8yqjaf73INMJlkcHa90!/b/dDMBAAAAAAAA&bo=rANxAAAAAAADJ9w!&rf=viewer_4">
 </center>
 2. 分类错误，一共191类坦克，但神经网络将所以坦克分类为‘5’和‘51’。
+
 # 四、问题分析及初步解决思路
 1. 暂无采购显卡的预算，所以目前的思路有2个。（1）进一步阅读相关文献，寻找较小的网络；（2）进一步调小Batch_size,dimension等参数。
 
