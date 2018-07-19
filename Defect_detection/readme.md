@@ -23,6 +23,7 @@ Speed (ms) | COCO mAP[^1]
 ### 三、分析
 可以看出，对于V1中识别效果不佳的轧制条痕原料、成品划伤、稳定辊划伤、凹印这几类疵点，V2模型表现出了良好的效果。
 除此以外，V1中能识别的疵点，V2有相同，甚至更好的表现。
+
 ![image](http://m.qpic.cn/psb?/V13EpJbL3HbDX9/cGFj4dwRE4B0mWO3PFM.dKHzDISfQ6qeBHjE*der0Vs!/b/dEUBAAAAAAAA&bo=twHVAbcB1QEDFzI!&rf=viewer_4)
 
 ---
