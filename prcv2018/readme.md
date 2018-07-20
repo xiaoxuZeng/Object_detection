@@ -1,4 +1,10 @@
 # [PRCV 2018](https://prcv-conf.org/2018/comp_list_05?from=singlemessage&isappinstalled=0)
+> 更新 20180720 V3
+
+目前在Tensorflow detection model zoo中，基于SSD框架的目标检测神经网络中，COCO mAP[^1]最高的是ssd_resnet_50_fpn_coco，其COCO mAP[^1]为35。其用于提取特征向量的base模型，在ILSVRC-2012-CLS 上的Top-1 Accuracy=75.2。从理论上来说，利用在ILSVRC-2012-CLS 上的Top-1 Accuracy=78.0的Inception V3作为base模型的SSD，能取得更好的检测效果。
+
+下一阶段的任务是，利用```DetectionModel```接口，打造ssd_Inception V3网络，用于训练。
+
 > 更新 20180714 V2
 # 一、主要更新内容
 1. 对主办方给的数据进行筛查，剔除问题数据；
