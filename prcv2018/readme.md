@@ -57,9 +57,9 @@
 </figure><figure class="half">
     <img src="http://m.qpic.cn/psb?/V13EpJbL1fHfxN/vR87Nu35M7uJWN*KrFxWx1kTvUdhHd2kMoevLgSMUAE!/b/dDEBAAAAAAAA&bo=yQJnAckCZwEDJwI!&rf=viewer_4" width="40%" height="40%" />
     <img src="http://m.qpic.cn/psb?/V13EpJbL1fHfxN/gA0lkW2WrcN74tYvwXzq*NkCxA8RIUcUDulw*J*yyAA!/b/dC4BAAAAAAAA&bo=YgLWAWIC1gEDR2I!&rf=viewer_4" width="40%" height="40%" />
-</figure><figure class="half">
-    <img src="http://m.qpic.cn/psb?/V13EpJbL1fHfxN/vJZNyBtXy1PzBZNJrUg2tVgA*PVa0teVmC5Z*j7U9So!/b/dDMBAAAAAAAA&bo=yQJzAckCcwEDNxI!&rf=viewer_4" width="40%" height="40%" />
-    <img src="http://m.qpic.cn/psb?/V13EpJbL1fHfxN/vJZNyBtXy1PzBZNJrUg2tVgA*PVa0teVmC5Z*j7U9So!/b/dDMBAAAAAAAA&bo=yQJzAckCcwEDNxI!&rf=viewer_4" width="40%" height="40%" />
+
+<img src="http://m.qpic.cn/psb?/V13EpJbL1fHfxN/vJZNyBtXy1PzBZNJrUg2tVgA*PVa0teVmC5Z*j7U9So!/b/dDMBAAAAAAAA&bo=yQJzAckCcwEDNxI!&rf=viewer_4" width="40%" height="40%" />
+
 </figure><figure class="half">
     <img src="http://m.qpic.cn/psb?/V13EpJbL1fHfxN/cfAihJGiWT440nNidF.jhoCOv*HD83VOlbNHc7.ROyo!/b/dDABAAAAAAAA&bo=yQJcAckCXAEDNxI!&rf=viewer_4" width="40%" height="40%" />
     <img src="http://m.qpic.cn/psb?/V13EpJbL1fHfxN/AazS3z5nNJHJHjw5qxlYQXA6VMc2WjLUWVntUtjlNmw!/b/dDABAAAAAAAA&bo=bwHWAW8B1gEDJwI!&rf=viewer_4" width="40%" height="40%" />
