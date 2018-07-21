@@ -1,4 +1,36 @@
 # [PRCV 2018](https://prcv-conf.org/2018/comp_list_05?from=singlemessage&isappinstalled=0)
+
+> 更新 20180721 V4
+# 一、主要更新内容
+1. 将提取特征向量的cnn网络换成了更高级的inception V3；
+2. 改善分类错误的问题。
+
+# 二、检测效果
+<img src="http://m.qpic.cn/psb?/V13EpJbL3HbDX9/EzTwWqlLoYxNh.*SXXH7z8ThZgm3DnZOMR22Lgc.KMA!/b/dEMBAAAAAAAA&bo=mgLVAZoC1QEDR2I!&rf=viewer_4" width="40%" height="40%" />
+<img src="http://m.qpic.cn/psb?/V13EpJbL3HbDX9/DOkjc3aGg7P3HrBHMRI*.hYAi3t8d0EwOg5W6KARD88!/b/dDEBAAAAAAAA&bo=yQLEAckCxAEDNxI!&rf=viewer_4" width="40%" height="40%" />
+<img src="http://m.qpic.cn/psb?/V13EpJbL3HbDX9/JYVHf2y9*i0..nULHZBfnos8IeVylgTuPHqtN1AjSe8!/b/dEEBAAAAAAAA&bo=TwLVAU8C1QEDJwI!&rf=viewer_4" width="40%" height="40%" />
+<img src="http://m.qpic.cn/psb?/V13EpJbL3HbDX9/JkOpktnZgm4ndniJBsE4voSQUj70cUgxcwnDmsGvxss!/b/dC8BAAAAAAAA&bo=3wHVAd8B1QEDJwI!&rf=viewer_4" width="40%" height="40%" />
+<img src="http://m.qpic.cn/psb?/V13EpJbL3HbDX9/yFfbk*oHS54ZXw29XifqxftZWTiHk2yRDX7LIyWKgqc!/b/dC8BAAAAAAAA&bo=yQKdAckCnQEDNxI!&rf=viewer_4" width="40%" height="40%" />
+<img src="http://m.qpic.cn/psb?/V13EpJbL3HbDX9/11ZwyEU1vM19l*HLE76MqCwes26WuyXMIozd3IO8.gA!/b/dFYBAAAAAAAA&bo=uALVAbgC1QEDNxI!&rf=viewer_4" width="40%" height="40%" />
+<img src="http://m.qpic.cn/psb?/V13EpJbL3HbDX9/36G9vBQdcH0jOr4CL2ItIBm*Chq8FGNJM1B6yIv19BA!/b/dDIBAAAAAAAA&bo=bwLVAW8C1QEDNxI!&rf=viewer_4" width="40%" height="40%" />
+<img src="http://m.qpic.cn/psb?/V13EpJbL3HbDX9/zSEFWsw6urGeVr*Hr919tFv.diAs28JJKoHF24sh.Zc!/b/dDIBAAAAAAAA&bo=yQJnAckCZwEDJwI!&rf=viewer_4" width="40%" height="40%" />
+<img src="http://m.qpic.cn/psb?/V13EpJbL3HbDX9/BH3xBxsbeJAdL2G9RTeBbboT.OKKb3OnlubfdtQ4Ejs!/b/dIMAAAAAAAAA&bo=bwLWAW8C1gEDNxI!&rf=viewer_4" width="40%" height="40%" />
+
+# 三、存在的问题
+1. 类别还是会判错；
+2. 检测效果还是不理想。
+
+# 四、问题分析及解决思路
+1. 类别会判错这是分类的问题，采用更高级的特征向量提取网络应该能改善问题；
+2. 利用坦克数据集而不是voc2007对base model进行训练，也可能改善模型性能。
+
+# 五、下一阶段目标
+1. 写一个script对模型的mAP进行评估；
+2. 争取利用inception V4的SSD进行训练。
+
+---
+
+
 > 更新 20180720 V3
 
 目前在Tensorflow detection model zoo中，基于SSD框架的目标检测神经网络中，COCO mAP[^1]最高的是ssd_resnet_50_fpn_coco，其COCO mAP[^1]为35。其用于提取特征向量的base模型，在ILSVRC-2012-CLS 上的Top-1 Accuracy=75.2。从理论上来说，利用在ILSVRC-2012-CLS 上的Top-1 Accuracy=78.0的Inception V3作为base模型的SSD，能取得更好的检测效果。
