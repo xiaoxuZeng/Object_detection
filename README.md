@@ -98,6 +98,32 @@ to the new slightly different:
 ```
 In python3 range is a generator object - it does not return a list. Convert it to a list before shuffling.
 ```
+5. ImportError: No module named setuptools
+
+```
+python setup.py build_ext --inplace
+Traceback (most recent call last):
+  File "setup.py", line 1, in <module>
+    from setuptools import setup, Extension
+ImportError: No module named setuptools
+Makefile:3: recipe for target 'all' failed
+```
+[解决方法](https://blog.csdn.net/niekai01/article/details/61624502)：
+```
+sudo apt-get install python-setuptools
+```
+6. [ImportError: No module named 'pycocotools'](https://github.com/matterport/Mask_RCNN/issues/6)
+```
+git clone https://github.com/pdollar/coco.git
+
+cd coco/PythonAPI
+make
+sudo make install
+sudo python setup.py install
+
+before doing above steps install cython
+```
+
 ## 四、检测结果
 ![image](http://m.qpic.cn/psb?/V13EpJbL3HbDX9/jsu8LOoB6UK628tijd02h3aO5kvAa45rfZwzOwzNPGE!/b/dFcAAAAAAAAA&bo=9AHVAQAAAAADBwM!&rf=viewer_4)
 ![image](http://m.qpic.cn/psb?/V13EpJbL3HbDX9/Rw*VMOSIx.sidQX8AVbZN6wuGLUYYdKD.3RUNcTCxKk!/b/dC8BAAAAAAAA&bo=TgHVAQAAAAADB7k!&rf=viewer_4)
