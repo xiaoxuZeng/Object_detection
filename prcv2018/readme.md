@@ -1,5 +1,78 @@
 # [PRCV 2018](https://prcv-conf.org/2018/comp_list_05?from=singlemessage&isappinstalled=0)
 
+> 更新 20180812 V5
+
+# 一、主要更新内容
+1. 将提取特征向量的cnn网络换成了更高级的inception V4；
+2. 对模型进行了定量评估。
+
+# 二、评估结果
+```1.SSD_Inception_V3评估结果：```
+```
+INFO:tensorflow:Losses/Loss/classification_loss: 13.053458
+INFO:tensorflow:Losses/Loss/localization_loss: 1.474766
+
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/1: 0.001048
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/100: 0.038720
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/101: 0.011621
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/102: 0.002060
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/103: 0.016934
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/104: 0.084230
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/106: 0.021555
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/107: 0.004495
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/108: 0.013519
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/109: 0.015791
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/11: 0.004934
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/118: 0.006469
+
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/31: nan
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/105: nan
+
+INFO:tensorflow:PascalBoxes_Precision/mAP@0.5IOU: 0.001171
+```
+
+```2.SSD_Inception_V4评估结果：```
+
+```
+INFO:tensorflow:Losses/Loss/classification_loss: 12.716391
+INFO:tensorflow:Losses/Loss/localization_loss: 1.102177
+
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/1: 0.074396
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/10: 0.021739
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/100: 0.265250
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/101: 0.156168
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/102: 0.006062
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/103: 0.009645
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/104: 0.019608
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/107: 0.003719
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/108: 0.004348
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/11: 0.005988
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/111: 0.009299
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/112: 0.012327
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/113: 0.000601
+
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/31: nan
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/105: nan
+
+INFO:tensorflow:PascalBoxes_Precision/mAP@0.5IOU: 0.003117
+```
+```3.相关说明：```
+为使评估结果具有说服力，两个模型均训练20000step，且Batch_size=2。
+# 三、结果分析
+从评估结果可以看出，```SSD_Inception_V4```的表现明显优于```SSD_Inception_V3```。其能够识别出15类坦克（```SSD_Inception_V3```为14类），mAP差不多是```SSD_Inception_V3```的3倍。
+
+# 四、存在的问题及解决思路
+```1.问题：```虽然```SSD_Inception_V4```的mAP差不多是```SSD_Inception_V3```的3倍，但还是非常的低，只有0.003117。
+
+```2.分析：```mAP过低，主要原因是分类不准确，实际上模型对图片中坦克位置检测的效果还是不错的。
+
+```3.解决思路：```
+1. 进一步训练；
+2. 提高分类loss的权重。
+
+---
+
+
 > 更新 20180721 V4
 # 一、主要更新内容
 1. 将提取特征向量的cnn网络换成了更高级的inception V3；
