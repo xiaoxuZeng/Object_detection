@@ -1,5 +1,59 @@
 # [PRCV 2018](https://prcv-conf.org/2018/comp_list_05?from=singlemessage&isappinstalled=0)
 
+> 更新 20180815 V6
+# 一、主要更新
+1. 将分类损失的权重调大；
+2. 进一步训练。
+# 二、评估结果
+```SSD_Inception_V4评估结果——100k stpes：```
+```
+INFO:tensorflow:Losses/Loss/classification_loss: 54.618763
+INFO:tensorflow:Losses/Loss/localization_loss: 0.905538
+
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/100: 0.002080
+
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/103: 0.000518
+
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/104: 0.009259
+
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/108: 0.003309
+
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/11: 0.002161
+
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/111: 0.065599
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/112: 0.006323
+
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/113: 0.266377
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/114: 0.072111
+
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/115: 0.001606
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/116: 0.047629
+
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/117: 0.021858
+I
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/148: 0.009390
+
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/154: 0.015385
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/41: 0.033333
+
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/31: nan
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/105: nan
+
+INFO:tensorflow:PascalBoxes_Precision/mAP@0.5IOU: 0.003053
+
+```
+# 三、结果分析
+
+1. mAP居然下降了，这个还是另我挺意外的；
+2. 能准确识别的类由15类上升到17类；
+3. 回归损失下降了将近20%，说明定位精度有所提高。
+
+# 四、问题分析及解决思路
+
+我还是认为mAP低于预期是由于分类精度过低导致的，现在有2个解决思路：
+1. 向主办方请求用于战车/坦克分类的数据集，从头训练用于特征向量提取的inception V4网络；
+2. 将所有战车/坦克的标签改为类1，将检测转变为单纯的战车/坦克检测问题。
+
 > 更新 20180812 V5
 
 # 一、主要更新内容
