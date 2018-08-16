@@ -1,3 +1,53 @@
+> 更新：20180816 V3
+
+# 一、主要更新内容
+1. 将模型换成更加高级的SSD-inception V4；
+2. 在同样训练20000steps的情况下，评估了SSD-inception V4与SSD-inception V3的mAP。
+
+# 二、结果比较
+
+```1.SSD-inception V3```
+```
+INFO:tensorflow:Losses/Loss/classification_loss: 8.755839
+INFO:tensorflow:Losses/Loss/localization_loss: 1.879736
+
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/class10: 0.098642
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/class11: 0.023295
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/class12: 0.256061
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/class4: 0.215808
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/class5: 0.286468
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/class6: 0.000000
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/class7: 0.551481
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/class8: 0.428571
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/class9: 0.697436
+
+INFO:tensorflow:PascalBoxes_Precision/mAP@0.5IOU: 0.284196
+```
+```2.SSD-inception V4```
+```
+INFO:tensorflow:Losses/Loss/classification_loss: 8.617603
+INFO:tensorflow:Losses/Loss/localization_loss: 0.587575
+
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/class10: 0.816573
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/class11: 1.000000
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/class12: 1.000000
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/class4: 1.000000
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/class5: 0.965909
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/class6: 0.860887
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/class7: 1.000000
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/class8: 1.000000
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/class8: 1.000000
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/class9: 1.000000
+INFO:tensorflow:PascalBoxes_PerformanceByCategory/AP@0.5IOU/class9: 1.000000
+
+INFO:tensorflow:PascalBoxes_Precision/mAP@0.5IOU: 0.960374
+```
+# 三、结果分析
+1. ``SSD-inception V4``在训练时分类损失的权重被修改为回归损失的4倍；
+2. 从结果可以看到，4倍分类损失权重的``SSD-inception V4``模型检测效果远远优于``SSD-inception V3``，其能够检测出9类疵点（``SSD-inception V3``检出8类）,``mAP@0.5IOU ``高达``0.960374``(``SSD-inception V3``的``mAP@0.5IOU ``为``0.284196``)。
+
+---
+
 # V2
 > 更新20180705
 
